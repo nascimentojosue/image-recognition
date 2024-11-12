@@ -33,3 +33,10 @@ def recognize_image(image_path):
     with torch.no_grad():
         input_batch = input_batch.to(device)
         output = model(input_batch)
+
+    
+    # Get the predicted class
+    _, predicted_idx = torch.max(output, 1)
+    predicted_label = labels[str(predicted_idx.item())]
+
+    print(f"Predicted object: {predicted_label}")
