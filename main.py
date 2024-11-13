@@ -40,3 +40,7 @@ def recognize_image(image_path):
     predicted_label = labels[str(predicted_idx.item())]
 
     print(f"Predicted object: {predicted_label}")
+
+
+# Run the recognition on an example image
+recognize_image("example.jpg")  # Replace with your image path
